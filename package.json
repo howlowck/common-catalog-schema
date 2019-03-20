@@ -1,0 +1,18 @@
+{
+  "name": "common-catalog",
+  "version": "0.1.0",
+  "description": "A Common Catalog Schema that allows for full relationship and classification",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "npm run build:schema && docson -d ./json-schema/",
+    "build:schema": "typescript-json-schema \"src/schema.ts\" CatalogSchema -o json-schema/schema.json --titles=true --propOrder=true",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hao Luo",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "docson": "^2.1.0",
+    "typescript-json-schema": "^0.36.0"
+  }
+}
