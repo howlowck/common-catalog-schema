@@ -2,7 +2,7 @@
   "name": "common-catalog-schema",
   "version": "0.1.0",
   "description": "A Common Catalog Schema that allows for full relationship and classification",
-  "main": "dist/index.js",
+  "main": "dist/schema.js",
   "scripts": {
     "start": "npm run build:schema && docson -d ./json-schema/",
     "build:schema": "typescript-json-schema \"src/schema.ts\" CatalogSchema -o json-schema/schema.json --titles=true --propOrder=true",
