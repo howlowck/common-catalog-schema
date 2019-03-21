@@ -2,7 +2,7 @@
  * Represents a Common Schema for any Catalog Data
  * This is used for a full relationship declaration in the menu service
  */
-interface CatalogSchema {
+export interface CatalogSchema {
     /**
      * Title of the data
      */
@@ -33,7 +33,7 @@ interface CatalogSchema {
 /**
  * Represents a specific classification
  */
-interface Classification {
+export interface Classification {
   /**
    * An unique id for the classification
    * @pattern ^[A-Za-z0-9_\-]+$
@@ -57,7 +57,7 @@ interface Classification {
   synonyms: string[]
 }
 
-enum ConceptType {
+export enum ConceptType {
   discrete = 'discrete',
   ordered = 'discrete-ordered',
   quantity = 'quantity'
@@ -66,7 +66,7 @@ enum ConceptType {
 /**
  * Represents a Concept
  */
-interface Concept {
+export interface Concept {
   /**
    * An unique id for the concept
    * @pattern ^[A-Za-z0-9_\-]+$
@@ -91,7 +91,7 @@ interface Concept {
   quantity?: QuantityValue
 }
 
-interface QuantityValue {
+export interface QuantityValue {
   minQuantity: number,
   maxQuantity: number,
   incrementBy: number
@@ -100,14 +100,14 @@ interface QuantityValue {
 /**
  * Represents a Collection Type
  */
-enum CollectionType {
+export enum CollectionType {
   item = 'item'
 }
 
 /**
  * Represents an item Grouping
  */
-interface Collection {
+export interface Collection {
   /**
    * An unique id for the concept
    * @pattern ^[A-Za-z0-9_\-]+$
@@ -127,7 +127,7 @@ interface Collection {
 /**
  * Represents a Text Value in a Concept
  */
-interface DiscreteItem {
+export interface DiscreteItem {
   value: string,
   synonyms?: string[],
   /**
@@ -140,7 +140,7 @@ interface DiscreteItem {
 /**
  * Represents an Item Value in a Concept
  */
-interface ItemValue {
+export interface ItemValue {
   /**
    * Id of an Item
    * @pattern ^[A-Za-z0-9_\-]+$
@@ -151,7 +151,7 @@ interface ItemValue {
 /**
  * Represents a concrete item and all its attributes and relationships
  */
-interface ItemDefinition {
+export interface ItemDefinition {
   /**
    * Id of the item
    * @pattern ^[A-Za-z0-9_\-]+$
@@ -168,7 +168,7 @@ interface ItemDefinition {
   choices: Choice[]
 }
 
-interface Metadata {
+export interface Metadata {
   name: string,
   value: string | number | boolean
 }
@@ -176,7 +176,7 @@ interface Metadata {
 /**
  * Represents a Choice in a Item Definition
  */
-interface Choice {
+export interface Choice {
   /**
    * Id of the Concept
    * @pattern ^[A-Za-z0-9_\-]+$
@@ -191,7 +191,7 @@ interface Choice {
   choiceValues: ChoiceValue[]
 }
 
-interface ChoiceValue {
+export interface ChoiceValue {
   /**
    * `value` is the associated value in the concept (pointed by the `conceptId`)
    */
@@ -206,7 +206,7 @@ interface ChoiceValue {
 /**
  * Represents an Attribute
  */
-interface Attribute {
+export interface Attribute {
   /**
    * Id of the Concept
    * @pattern ^[A-Za-z0-9_\-]+$
@@ -215,12 +215,12 @@ interface Attribute {
   value: string | boolean | number
 }
 
-enum AddOnChoiceType {
+export enum AddOnChoiceType {
   option = 'option',
   range = 'range'
 }
 
-enum Target {
+export enum Target {
   supplement = 'supplement',
   replace = 'replace'
 }
@@ -228,7 +228,7 @@ enum Target {
 /**
  * Represents an AddOn in an Item Definition
  */
-interface AddOn {
+export interface AddOn {
   /**
    * Id of the Item
    * @pattern ^[A-Za-z0-9_\-]+$
@@ -240,13 +240,13 @@ interface AddOn {
   option: RangeOption | ConceptOption
 }
 
-interface ConceptOption {
+export interface ConceptOption {
   conceptId: string,
   defaultValue: string,
   optionValues: OptionValue[]
 }
 
-interface OptionValue {
+export interface OptionValue {
   value: string,
   data: { [key: string]: string | number | boolean }
 }
@@ -254,7 +254,7 @@ interface OptionValue {
 /**
  * Represents a Range Option
  */
-interface RangeOption {
+export interface RangeOption {
   incrementBy: number,
   minQuantity: number,
   defaultQuantity: number,
@@ -265,7 +265,7 @@ interface RangeOption {
  * Represents a Customization Option which points to a Concept
  * Customization changes the aspect (associated concept) of a Component or an AddOn
  */
-interface Customization {
+export interface Customization {
   /**
    * Id of the Concept
    * @pattern ^[A-Za-z0-9_\-]+$
@@ -276,7 +276,7 @@ interface Customization {
   maxQuantity: number
 }
 
-enum ComponentType {
+export enum ComponentType {
   quantity = 'quantity',
   concept = 'concept'
 }
@@ -285,7 +285,7 @@ enum ComponentType {
  * Represents a Component
  * A Component is a concrete item that makes up another concrete item
  */
-interface Component {
+export interface Component {
   /**
    * Id of the Item
    * @pattern ^[A-Za-z0-9_\-]+$
@@ -295,23 +295,23 @@ interface Component {
   attribute: QuantityAttribute | ConceptAttribute
 }
 
-interface QuantityAttribute {
+export interface QuantityAttribute {
   defaultQuantity: number,
   minQuantity: number,
   maxQuantity: number
 }
 
-interface ConceptAttribute {
+export interface ConceptAttribute {
   conceptId: string,
   defaultValue: string
 }
 
-enum SelectType {
+export enum SelectType {
   single = 'single',
   multiple = 'multiple'
 }
 
-interface ClassificationItem {
+export interface ClassificationItem {
   /**
    * Id of the Classification
    * @pattern ^[A-Za-z0-9_\-]+$
@@ -319,7 +319,7 @@ interface ClassificationItem {
   classificationId: string
 }
 
-interface Attribute {
+export interface Attribute {
   name: string,
   value: string | boolean | number,
 }

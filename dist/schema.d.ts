@@ -2,7 +2,7 @@
  * Represents a Common Schema for any Catalog Data
  * This is used for a full relationship declaration in the menu service
  */
-interface CatalogSchema {
+export interface CatalogSchema {
     /**
      * Title of the data
      */
@@ -28,7 +28,7 @@ interface CatalogSchema {
 /**
  * Represents a specific classification
  */
-interface Classification {
+export interface Classification {
     /**
      * An unique id for the classification
      * @pattern ^[A-Za-z0-9_\-]+$
@@ -48,7 +48,7 @@ interface Classification {
      */
     synonyms: string[];
 }
-declare enum ConceptType {
+export declare enum ConceptType {
     discrete = "discrete",
     ordered = "discrete-ordered",
     quantity = "quantity"
@@ -56,7 +56,7 @@ declare enum ConceptType {
 /**
  * Represents a Concept
  */
-interface Concept {
+export interface Concept {
     /**
      * An unique id for the concept
      * @pattern ^[A-Za-z0-9_\-]+$
@@ -76,7 +76,7 @@ interface Concept {
     values?: DiscreteItem[];
     quantity?: QuantityValue;
 }
-interface QuantityValue {
+export interface QuantityValue {
     minQuantity: number;
     maxQuantity: number;
     incrementBy: number;
@@ -84,13 +84,13 @@ interface QuantityValue {
 /**
  * Represents a Collection Type
  */
-declare enum CollectionType {
+export declare enum CollectionType {
     item = "item"
 }
 /**
  * Represents an item Grouping
  */
-interface Collection {
+export interface Collection {
     /**
      * An unique id for the concept
      * @pattern ^[A-Za-z0-9_\-]+$
@@ -106,7 +106,7 @@ interface Collection {
 /**
  * Represents a Text Value in a Concept
  */
-interface DiscreteItem {
+export interface DiscreteItem {
     value: string;
     synonyms?: string[];
     /**
@@ -118,7 +118,7 @@ interface DiscreteItem {
 /**
  * Represents an Item Value in a Concept
  */
-interface ItemValue {
+export interface ItemValue {
     /**
      * Id of an Item
      * @pattern ^[A-Za-z0-9_\-]+$
@@ -128,7 +128,7 @@ interface ItemValue {
 /**
  * Represents a concrete item and all its attributes and relationships
  */
-interface ItemDefinition {
+export interface ItemDefinition {
     /**
      * Id of the item
      * @pattern ^[A-Za-z0-9_\-]+$
@@ -144,14 +144,14 @@ interface ItemDefinition {
     customizations: Customization[];
     choices: Choice[];
 }
-interface Metadata {
+export interface Metadata {
     name: string;
     value: string | number | boolean;
 }
 /**
  * Represents a Choice in a Item Definition
  */
-interface Choice {
+export interface Choice {
     /**
      * Id of the Concept
      * @pattern ^[A-Za-z0-9_\-]+$
@@ -165,7 +165,7 @@ interface Choice {
     maxQuantity: number;
     choiceValues: ChoiceValue[];
 }
-interface ChoiceValue {
+export interface ChoiceValue {
     /**
      * `value` is the associated value in the concept (pointed by the `conceptId`)
      */
@@ -180,7 +180,7 @@ interface ChoiceValue {
 /**
  * Represents an Attribute
  */
-interface Attribute {
+export interface Attribute {
     /**
      * Id of the Concept
      * @pattern ^[A-Za-z0-9_\-]+$
@@ -188,18 +188,18 @@ interface Attribute {
     conceptId: string;
     value: string | boolean | number;
 }
-declare enum AddOnChoiceType {
+export declare enum AddOnChoiceType {
     option = "option",
     range = "range"
 }
-declare enum Target {
+export declare enum Target {
     supplement = "supplement",
     replace = "replace"
 }
 /**
  * Represents an AddOn in an Item Definition
  */
-interface AddOn {
+export interface AddOn {
     /**
      * Id of the Item
      * @pattern ^[A-Za-z0-9_\-]+$
@@ -210,12 +210,12 @@ interface AddOn {
     attributes: Attribute[];
     option: RangeOption | ConceptOption;
 }
-interface ConceptOption {
+export interface ConceptOption {
     conceptId: string;
     defaultValue: string;
     optionValues: OptionValue[];
 }
-interface OptionValue {
+export interface OptionValue {
     value: string;
     data: {
         [key: string]: string | number | boolean;
@@ -224,7 +224,7 @@ interface OptionValue {
 /**
  * Represents a Range Option
  */
-interface RangeOption {
+export interface RangeOption {
     incrementBy: number;
     minQuantity: number;
     defaultQuantity: number;
@@ -234,7 +234,7 @@ interface RangeOption {
  * Represents a Customization Option which points to a Concept
  * Customization changes the aspect (associated concept) of a Component or an AddOn
  */
-interface Customization {
+export interface Customization {
     /**
      * Id of the Concept
      * @pattern ^[A-Za-z0-9_\-]+$
@@ -244,7 +244,7 @@ interface Customization {
     defaultQuantity: number;
     maxQuantity: number;
 }
-declare enum ComponentType {
+export declare enum ComponentType {
     quantity = "quantity",
     concept = "concept"
 }
@@ -252,7 +252,7 @@ declare enum ComponentType {
  * Represents a Component
  * A Component is a concrete item that makes up another concrete item
  */
-interface Component {
+export interface Component {
     /**
      * Id of the Item
      * @pattern ^[A-Za-z0-9_\-]+$
@@ -261,27 +261,27 @@ interface Component {
     type: ComponentType;
     attribute: QuantityAttribute | ConceptAttribute;
 }
-interface QuantityAttribute {
+export interface QuantityAttribute {
     defaultQuantity: number;
     minQuantity: number;
     maxQuantity: number;
 }
-interface ConceptAttribute {
+export interface ConceptAttribute {
     conceptId: string;
     defaultValue: string;
 }
-declare enum SelectType {
+export declare enum SelectType {
     single = "single",
     multiple = "multiple"
 }
-interface ClassificationItem {
+export interface ClassificationItem {
     /**
      * Id of the Classification
      * @pattern ^[A-Za-z0-9_\-]+$
      */
     classificationId: string;
 }
-interface Attribute {
+export interface Attribute {
     name: string;
     value: string | boolean | number;
 }
