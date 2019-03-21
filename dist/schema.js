@@ -32,3 +32,4 @@ var SelectType;
     SelectType["single"] = "single";
     SelectType["multiple"] = "multiple";
 })(SelectType || (SelectType = {}));
+//# sourceMappingURL=schema.js.map
