@@ -1,6 +1,6 @@
 {
   "name": "common-catalog-schema",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Common Catalog Schema that allows for full relationship and classification",
   "main": "dist/schema.js",
   "scripts": {
