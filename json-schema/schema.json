@@ -296,29 +296,30 @@
                     "title": "id",
                     "type": "string"
                 },
+                "quantity": {
+                    "$ref": "#/definitions/QuantityValue",
+                    "title": "quantity"
+                },
                 "type": {
                     "$ref": "#/definitions/ConceptType",
                     "description": "The type of concept values",
                     "title": "type"
                 },
-                "value": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/definitions/QuantityValue"
-                        },
-                        {
-                            "$ref": "#/definitions/DiscreteValue"
-                        }
-                    ],
+                "values": {
                     "description": "The list of values",
-                    "title": "value"
+                    "items": {
+                        "$ref": "#/definitions/DiscreteItem"
+                    },
+                    "title": "values",
+                    "type": "array"
                 }
             },
             "propertyOrder": [
                 "id",
                 "displayName",
                 "type",
-                "value"
+                "values",
+                "quantity"
             ],
             "title": "Concept",
             "type": "object"
@@ -400,22 +401,6 @@
                 "synonyms"
             ],
             "title": "DiscreteItem",
-            "type": "object"
-        },
-        "DiscreteValue": {
-            "properties": {
-                "discreteItems": {
-                    "items": {
-                        "$ref": "#/definitions/DiscreteItem"
-                    },
-                    "title": "discreteItems",
-                    "type": "array"
-                }
-            },
-            "propertyOrder": [
-                "discreteItems"
-            ],
-            "title": "DiscreteValue",
             "type": "object"
         },
         "ItemDefinition": {

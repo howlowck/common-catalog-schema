@@ -12,7 +12,7 @@
       "synonyms": ["appetizer", "app", "Hors doeuvre"]
     },
     {
-      "id": "dim sum",
+      "id": "dim-sum",
       "name": "Dim Sum",
       "synonyms": []
     },
@@ -845,77 +845,65 @@
       "id": "protein",
       "displayName": "Protein",
       "type": "discrete",
-      "value": {
-        "discreteItems": [
-          {"value": "Pork"},
-          {"value": "Beef"},
-          {"value": "Chicken"},
-          {"value": "Shrimp"}
-        ]
-      }
+      "values": [
+        {"value": "Pork"},
+        {"value": "Beef"},
+        {"value": "Chicken"},
+        {"value": "Shrimp"}
+      ]
     },
     {
       "id": "sauce-amount",
       "displayName": "Sauce Amount",
       "type": "discrete",
-      "value": {
-        "discreteItems": [
-          {"value": "None"},
-          {"value": "Light"},
-          {"value": "Regular"},
-          {"value": "Extra"}
-        ]
-      }
+      "values": [
+        {"value": "None"},
+        {"value": "Light"},
+        {"value": "Regular"},
+        {"value": "Extra"}
+      ]
     },
     {
       "id": "salad-protein",
       "displayName": "Protein for the salad",
       "type": "discrete",
-      "value": {
-        "discreteItems": [
-          {"value": "Chicken"},
-          {"value": "Shrimp"},
-          {"value": "Salmon"}
-        ]
-      }
+      "values": [
+        {"value": "Chicken"},
+        {"value": "Shrimp"},
+        {"value": "Salmon"}
+      ]
     },
     {
       "id": "pad-thai-protein",
       "displayName": "Protein for the Pad Thai",
       "type": "discrete",
-      "value": {
-        "discreteItems": [
-          {"value": "Chicken"},
-          {"value": "Shrimp"},
-          {"value": "Combo"}
-        ]
-      }
+      "values": [
+        {"value": "Chicken"},
+        {"value": "Shrimp"},
+        {"value": "Combo"}
+      ]
     },
     {
       "id": "carb-protein",
       "displayName": "Protein for your carb",
       "type": "discrete",
-      "value": {
-        "discreteItems": [
-          {"value": "Vegetable"},
-          {"value": "Chicken"},
-          {"value": "Beef"},
-          {"value": "Pork"},
-          {"value": "Shrimp"},
-          {"value": "Combo"}
-        ]
-      }
+      "values": [
+        {"value": "Vegetable"},
+        {"value": "Chicken"},
+        {"value": "Beef"},
+        {"value": "Pork"},
+        {"value": "Shrimp"},
+        {"value": "Combo"}
+      ]
     },
     {
       "id": "dressing-placement",
       "displayName": "Placement for the dressing",
       "type": "discrete",
-      "value": {
-        "discreteItems": [
-          {"value": "On the side"},
-          {"value": "On top"}
-        ]
-      }
+      "values": [
+        {"value": "On the side"},
+        {"value": "On top"}
+      ]
     }
   ],
   "collections": [

@@ -85,7 +85,9 @@ interface Concept {
   /**
    * The list of values
    */
-  value: QuantityValue | DiscreteValue
+  values?: DiscreteItem[]
+
+  quantity?: QuantityValue
 }
 
 interface QuantityValue {
@@ -119,10 +121,6 @@ interface Collection {
   type: CollectionType,
 
   values: ItemValue[]
-}
-
-interface DiscreteValue {
-  discreteItems: DiscreteItem[]
 }
 
 /**
