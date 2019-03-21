@@ -59,6 +59,7 @@ interface Classification {
 
 enum ConceptType {
   discrete = 'discrete',
+  ordered = 'discrete-ordered',
   quantity = 'quantity'
 }
 
@@ -177,11 +178,24 @@ interface Choice {
    */
   conceptId: string,
   required: boolean,
-  type: ChoiceType,
+  target: Target,
+  selectType: SelectType,
   minQuantity: number,
   defaultQuantity: number,
   maxQuantity: number
-  attributes: Attribute[]
+  choiceValues: ChoiceValue[]
+}
+
+interface ChoiceValue {
+  /**
+   * `value` is the associated value in the concept (pointed by the `conceptId`)
+   */
+  value: string,
+
+  /**
+   * This is a data object that is tied to the value, for the item
+   */
+  data: { [key: string]: string | number | boolean }
 }
 
 /**
@@ -201,7 +215,7 @@ enum AddOnChoiceType {
   range = 'range'
 }
 
-enum AddOnType {
+enum Target {
   supplement = 'supplement',
   replace = 'replace'
 }
@@ -215,10 +229,21 @@ interface AddOn {
    * @pattern ^[A-Za-z0-9_\-]+$
    */
   itemId: string,
-  type: AddOnType,
+  target: Target,
   choiceType: AddOnChoiceType
   attributes: Attribute[],
-  option: RangeOption | Customization
+  option: RangeOption | ConceptOption
+}
+
+interface ConceptOption {
+  conceptId: string,
+  defaultValue: string,
+  optionValues: OptionValue[]
+}
+
+interface OptionValue {
+  value: string,
+  data: { [key: string]: string | number | boolean }
 }
 
 /**
@@ -233,6 +258,7 @@ interface RangeOption {
 
 /**
  * Represents a Customization Option which points to a Concept
+ * Customization changes the aspect (associated concept) of a Component or an AddOn
  */
 interface Customization {
   /**
@@ -275,7 +301,7 @@ interface ConceptAttribute {
   defaultValue: string
 }
 
-enum ChoiceType {
+enum SelectType {
   single = 'single',
   multiple = 'multiple'
 }

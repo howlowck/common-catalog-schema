@@ -24,22 +24,22 @@
                 "option": {
                     "anyOf": [
                         {
-                            "$ref": "#/definitions/RangeOption"
+                            "$ref": "#/definitions/ConceptOption"
                         },
                         {
-                            "$ref": "#/definitions/Customization"
+                            "$ref": "#/definitions/RangeOption"
                         }
                     ],
                     "title": "option"
                 },
-                "type": {
-                    "$ref": "#/definitions/AddOnType",
-                    "title": "type"
+                "target": {
+                    "$ref": "#/definitions/Target",
+                    "title": "target"
                 }
             },
             "propertyOrder": [
                 "itemId",
-                "type",
+                "target",
                 "choiceType",
                 "attributes",
                 "option"
@@ -53,14 +53,6 @@
                 "range"
             ],
             "title": "AddOnChoiceType",
-            "type": "string"
-        },
-        "AddOnType": {
-            "enum": [
-                "replace",
-                "supplement"
-            ],
-            "title": "AddOnType",
             "type": "string"
         },
         "Attribute": {
@@ -96,11 +88,11 @@
         "Choice": {
             "description": "Represents a Choice in a Item Definition",
             "properties": {
-                "attributes": {
+                "choiceValues": {
                     "items": {
-                        "$ref": "#/definitions/Attribute"
+                        "$ref": "#/definitions/ChoiceValue"
                     },
-                    "title": "attributes",
+                    "title": "choiceValues",
                     "type": "array"
                 },
                 "conceptId": {
@@ -125,30 +117,56 @@
                     "title": "required",
                     "type": "boolean"
                 },
-                "type": {
-                    "$ref": "#/definitions/ChoiceType",
-                    "title": "type"
+                "selectType": {
+                    "$ref": "#/definitions/SelectType",
+                    "title": "selectType"
+                },
+                "target": {
+                    "$ref": "#/definitions/Target",
+                    "title": "target"
                 }
             },
             "propertyOrder": [
                 "conceptId",
                 "required",
-                "type",
+                "target",
+                "selectType",
                 "minQuantity",
                 "defaultQuantity",
                 "maxQuantity",
-                "attributes"
+                "choiceValues"
             ],
             "title": "Choice",
             "type": "object"
         },
-        "ChoiceType": {
-            "enum": [
-                "multiple",
-                "single"
+        "ChoiceValue": {
+            "properties": {
+                "data": {
+                    "additionalProperties": {
+                        "type": [
+                            "string",
+                            "number",
+                            "boolean"
+                        ]
+                    },
+                    "description": "This is a data object that is tied to the value, for the item",
+                    "propertyOrder": [
+                    ],
+                    "title": "data",
+                    "type": "object"
+                },
+                "value": {
+                    "description": "`value` is the associated value in the concept (pointed by the `conceptId`)",
+                    "title": "value",
+                    "type": "string"
+                }
+            },
+            "propertyOrder": [
+                "value",
+                "data"
             ],
-            "title": "ChoiceType",
-            "type": "string"
+            "title": "ChoiceValue",
+            "type": "object"
         },
         "Classification": {
             "description": "Represents a specific classification",
@@ -342,16 +360,43 @@
             "title": "ConceptAttribute",
             "type": "object"
         },
+        "ConceptOption": {
+            "properties": {
+                "conceptId": {
+                    "title": "conceptId",
+                    "type": "string"
+                },
+                "defaultValue": {
+                    "title": "defaultValue",
+                    "type": "string"
+                },
+                "optionValues": {
+                    "items": {
+                        "$ref": "#/definitions/OptionValue"
+                    },
+                    "title": "optionValues",
+                    "type": "array"
+                }
+            },
+            "propertyOrder": [
+                "conceptId",
+                "defaultValue",
+                "optionValues"
+            ],
+            "title": "ConceptOption",
+            "type": "object"
+        },
         "ConceptType": {
             "enum": [
                 "discrete",
+                "discrete-ordered",
                 "quantity"
             ],
             "title": "ConceptType",
             "type": "string"
         },
         "Customization": {
-            "description": "Represents a Customization Option which points to a Concept",
+            "description": "Represents a Customization Option which points to a Concept\nCustomization changes the aspect (associated concept) of a Component or an AddOn",
             "properties": {
                 "conceptId": {
                     "description": "Id of the Concept",
@@ -523,6 +568,33 @@
             "title": "Metadata",
             "type": "object"
         },
+        "OptionValue": {
+            "properties": {
+                "data": {
+                    "additionalProperties": {
+                        "type": [
+                            "string",
+                            "number",
+                            "boolean"
+                        ]
+                    },
+                    "propertyOrder": [
+                    ],
+                    "title": "data",
+                    "type": "object"
+                },
+                "value": {
+                    "title": "value",
+                    "type": "string"
+                }
+            },
+            "propertyOrder": [
+                "value",
+                "data"
+            ],
+            "title": "OptionValue",
+            "type": "object"
+        },
         "QuantityAttribute": {
             "properties": {
                 "defaultQuantity": {
@@ -597,6 +669,22 @@
             ],
             "title": "RangeOption",
             "type": "object"
+        },
+        "SelectType": {
+            "enum": [
+                "multiple",
+                "single"
+            ],
+            "title": "SelectType",
+            "type": "string"
+        },
+        "Target": {
+            "enum": [
+                "replace",
+                "supplement"
+            ],
+            "title": "Target",
+            "type": "string"
         }
     },
     "description": "Represents a Common Schema for any Catalog Data\nThis is used for a full relationship declaration in the menu service",

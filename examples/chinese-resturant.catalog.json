@@ -376,7 +376,13 @@
           "minQuantity": 1,
           "defaultQuantity": 1,
           "maxQuantity": 1,
-          "type": "single"
+          "selectType": "single",
+          "choiceValues": [
+            {"value": "None", "data": { "price": 0 }},
+            {"value": "Chicken", "data": { "price": 3 }},
+            {"value": "Shrimp", "data": { "price": 3.5 }},
+            {"value": "Salmon", "data": { "price": 4 }}
+          ]
         }
       ]
     },
@@ -394,7 +400,13 @@
           "minQuantity": 1,
           "defaultQuantity": 1,
           "maxQuantity": 1,
-          "type": "single"
+          "selectType": "single",
+          "choiceValues": [
+            {"value": "None", "data": { "price": 0 }},
+            {"value": "Chicken", "data": { "price": 3 }},
+            {"value": "Shrimp", "data": { "price": 3.5 }},
+            {"value": "Salmon", "data": { "price": 4 }}
+          ]
         }
       ]
     },
@@ -412,7 +424,13 @@
           "minQuantity": 1,
           "defaultQuantity": 1,
           "maxQuantity": 1,
-          "type": "single"
+          "selectType": "single",
+          "choiceValues": [
+            {"value": "None", "data": { "price": 0 }},
+            {"value": "Chicken", "data": { "price": 3 }},
+            {"value": "Shrimp", "data": { "price": 3.5 }},
+            {"value": "Salmon", "data": { "price": 4 }}
+          ]
         }
       ]
     },
@@ -621,11 +639,17 @@
       "choices": [
         {
           "conceptId": "pad-thai-protein",
-          "type": "single",
+          "selectType": "single",
           "required": true,
           "defaultQuantity": 1,
           "minQuantity": 1,
-          "maxQuantity": 1
+          "maxQuantity": 1,
+          "target": "supplement",
+          "choiceValues": [
+            {"value": "Chicken", "data": { "price": 0 }},
+            {"value": "Shrimp", "data": { "price": 3 }},
+            {"value": "Combo", "data": { "price": 4 }}
+          ]
         }
       ]
     },
@@ -647,7 +671,7 @@
       "choices": [
         {
           "conceptId": "carb-protein",
-          "type": "single",
+          "selectType": "single",
           "required": true,
           "defaultQuantity": 1,
           "minQuantity": 1,
@@ -838,6 +862,93 @@
       "classification": {
         "classificationId": "sauce"
       }
+    },
+    {
+      "id": "sugar",
+      "displayName": "Sugar",
+      "commonNames": [],
+      "classification": {
+        "classificationId": "ingredient"
+      }
+    },
+    {
+      "id": "iced-milk-tea",
+      "displayName": "Iced Milk Tea",
+      "commonNames": [],
+      "classification": {
+        "classificationId": "cold-tea"
+      },
+      "components": [{
+        "itemId": "sugar",
+        "type": "concept",
+        "attribute": {
+          "conceptId": "sweet-level",
+          "defaultValue": "Full"
+        }
+      }],
+      "addOns": [
+        {
+          "itemId": "boba",
+          "target": "supplement",
+          "choiceType": "option",
+          "option": {
+            "conceptId": "boba-amount",
+            "defaultValue": "Regular"
+          }
+        }
+      ]
+    },
+    {
+      "id": "boba",
+      "displayName": "Boba",
+      "commonNames": ["tapioca"],
+      "classification": {
+        "classificationId": "ingredient"
+      },
+      "components": []
+    },
+    {
+      "id": "milk-tea",
+      "displayName": "Iced Milk Tea",
+      "commonNames": [],
+      "disambiguationAttributes": [
+        {
+          "conceptId": "tea-temperature",
+          "value": "Cold"
+        }
+      ],
+      "classification": {
+        "classificationId": "cold-tea"
+      },
+      "components": [{
+        "itemId": "sugar",
+        "type": "concept",
+        "attribute": {
+          "conceptId": "sweet-level",
+          "defaultValue": "Full"
+        }
+      }],
+      "addOns": [
+        {
+          "itemId": "boba",
+          "target": "supplement",
+          "choiceType": "option",
+          "option": {
+            "conceptId": "boba-amount",
+            "defaultValue": "Regular"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hot-milk-tea",
+      "displayName": "Hot milk tea",
+      "disambiguationAttributes": [
+        {
+          "conceptId": "tea-temperature",
+          "value": "Hot"
+        }
+      ]
     }
   ],
   "concepts": [
@@ -868,6 +979,7 @@
       "displayName": "Protein for the salad",
       "type": "discrete",
       "values": [
+        {"value": "None"},
         {"value": "Chicken"},
         {"value": "Shrimp"},
         {"value": "Salmon"}
@@ -904,6 +1016,38 @@
         {"value": "On the side"},
         {"value": "On top"}
       ]
+    },
+    {
+      "id": "sweet-level",
+      "displayName": "sweet level",
+      "type": "discrete-ordered",
+      "values": [
+        {"value": "None", "synonyms": ["zero", "zero percent"]},
+        {"value": "Quarter", "synonyms": ["one fourth", "twenty five percent"]},
+        {"value": "Half", "synonyms": ["fifty percent"]},
+        {"value": "Three Quarter", "synonyms": ["seventy five percent", "three fourth"]},
+        {"value": "Full", "synonyms": ["one hundred percent"]},
+        {"value": "Max", "synonyms": ["one hundred twenty percent"]}
+      ]
+    },
+    {
+      "id": "boba-amount",
+      "displayName": "Boba Amount",
+      "type": "discrete-ordered",
+      "values": [
+        {"value": "Less"},
+        {"value": "Regular"},
+        {"value": "Extra"}
+      ]
+    },
+    {
+      "id": "tea-temperature",
+      "displayName": "Tea Temperature",
+      "type": "discrete",
+      "values": [
+        {"value": "hot"},
+        {"value": "cold", "synonyms": ["iced"]}
+      ]
     }
   ],
   "collections": [
@@ -914,6 +1058,15 @@
       "values": [
         {"itemId": "kung-pao-chicken"},
         {"itemId": "kung-pao-shrimp"}
+      ]
+    },
+    {
+      "id": "milk-tea",
+      "displayName": "Milk Tea",
+      "type": "item",
+      "values": [
+        {"itemId": "hot-milk-tea"},
+        {"itemId": "iced-milk-tea"}
       ]
     }
   ]
