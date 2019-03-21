@@ -42,6 +42,11 @@
       "synonyms": ["main dish"]
     },
     {
+      "id": "combo",
+      "name": "Combo",
+      "synonyms": ["Combination"]
+    },
+    {
       "id": "dessert",
       "name": "Dessert",
       "synonyms": ["sweet"]
@@ -105,6 +110,12 @@
       "synonyms": []
     },
     {
+      "id": "soda",
+      "name": "Soda",
+      "parent": "drink",
+      "synonyms": []
+    },
+    {
       "id": "coffee",
       "name": "Coffee",
       "parent": "drink",
@@ -157,6 +168,12 @@
       "name": "Sauce",
       "parent": "ingredient",
       "synonyms": []
+    },
+    {
+      "id": "protein",
+      "name": "Protein",
+      "parent": "ingredient",
+      "synonyms": ["meat"]
     }
   ],
   "items": [
@@ -949,63 +966,102 @@
           "value": "Hot"
         }
       ]
+    },
+    {
+      "id": "spicy-chicken-combo",
+      "displayName": "Spicy Chicken Combo",
+      "components": [
+        {
+          "itemId": "spicy-chicken",
+          "type": "quantity",
+          "attribute": {
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "defaultQuantity": 1
+          }
+        },
+        {
+          "itemId": "medium-soda",
+          "type": "quantity",
+          "attribute": {
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "defaultQuantity": 1
+          }
+        }
+      ],
+      "classification": {
+        "classificationId": "combo"
+      },
+      "choices": [
+        {
+          "conceptId": "egg-roll-choice",
+          "required": true,
+          "selectType": "single",
+          "minQuantity": 1,
+          "maxQuantity": 1,
+          "defaultQuantity": 1,
+          "target": "supplement",
+          "choiceValues": [
+            { "value": "Pork", "data": {"price": 0} },
+            { "value": "Chicken", "data": {"price": 0} }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "small-soda",
+      "displayName": "Small Soda",
+      "components": [],
+      "disambiguationAttributes": [
+        {
+          "conceptId": "drink-size",
+          "value": "Small"
+        }
+      ],
+      "classification": {
+        "classificationId": "soda"
+      }
+    },
+    {
+      "id": "medium-soda",
+      "displayName": "Medium Soda",
+      "components": [],
+      "disambiguationAttributes": [
+        {
+          "conceptId": "drink-size",
+          "value": "Medium"
+        }
+      ],
+      "classification": {
+        "classificationId": "soda"
+      }
+    },
+    {
+      "id": "large-soda",
+      "displayName": "Large Soda",
+      "components": [],
+      "disambiguationAttributes": [
+        {
+          "conceptId": "drink-size",
+          "value": "Large"
+        }
+      ],
+      "classification": {
+        "classificationId": "soda"
+      }
     }
   ],
   "concepts": [
-    {
-      "id": "protein",
-      "displayName": "Protein",
-      "type": "discrete",
-      "values": [
-        {"value": "Pork"},
-        {"value": "Beef"},
-        {"value": "Chicken"},
-        {"value": "Shrimp"}
-      ]
-    },
     {
       "id": "sauce-amount",
       "displayName": "Sauce Amount",
       "type": "discrete",
       "values": [
-        {"value": "None"},
-        {"value": "Light"},
-        {"value": "Regular"},
-        {"value": "Extra"}
-      ]
-    },
-    {
-      "id": "salad-protein",
-      "displayName": "Protein for the salad",
-      "type": "discrete",
-      "values": [
-        {"value": "None"},
-        {"value": "Chicken"},
-        {"value": "Shrimp"},
-        {"value": "Salmon"}
-      ]
-    },
-    {
-      "id": "pad-thai-protein",
-      "displayName": "Protein for the Pad Thai",
-      "type": "discrete",
-      "values": [
-        {"value": "Chicken"},
-        {"value": "Shrimp"},
-        {"value": "Combo"}
-      ]
-    },
-    {
-      "id": "carb-protein",
-      "displayName": "Protein for your carb",
-      "type": "discrete",
-      "values": [
-        {"value": "Vegetable"},
-        {"value": "Chicken"},
-        {"value": "Beef"},
-        {"value": "Pork"},
-        {"value": "Shrimp"},
-        {"value": "Combo"}
+        {"value": "No Sauce"},
+        {"value": "Light Sauce"},
+        {"value": "Regular Sauce"},
+        {"value": "Extra Sauce"}
       ]
     },
     {
@@ -1022,12 +1078,12 @@
       "displayName": "sweet level",
       "type": "discrete-ordered",
       "values": [
-        {"value": "None", "synonyms": ["zero", "zero percent"]},
-        {"value": "Quarter", "synonyms": ["one fourth", "twenty five percent"]},
-        {"value": "Half", "synonyms": ["fifty percent"]},
-        {"value": "Three Quarter", "synonyms": ["seventy five percent", "three fourth"]},
-        {"value": "Full", "synonyms": ["one hundred percent"]},
-        {"value": "Max", "synonyms": ["one hundred twenty percent"]}
+        {"value": "No Sugar", "synonyms": ["zero sugar", "zero percent sugar", "no sugar"]},
+        {"value": "Quarter Sugar", "synonyms": ["one fourth sugar", "twenty five percent sugar"]},
+        {"value": "Half Sugar", "synonyms": ["fifty percent sugar"]},
+        {"value": "Three Quarter Sugar", "synonyms": ["seventy five percent sugar", "three fourth sugar"]},
+        {"value": "Full Sugar", "synonyms": ["regular sugar"]},
+        {"value": "Max Sugar", "synonyms": ["one hundred twenty percent"]}
       ]
     },
     {
@@ -1035,9 +1091,9 @@
       "displayName": "Boba Amount",
       "type": "discrete-ordered",
       "values": [
-        {"value": "Less"},
-        {"value": "Regular"},
-        {"value": "Extra"}
+        {"value": "Less Boba"},
+        {"value": "Regular Boba"},
+        {"value": "Extra Boba"}
       ]
     },
     {
@@ -1048,25 +1104,70 @@
         {"value": "hot"},
         {"value": "cold", "synonyms": ["iced"]}
       ]
-    }
-  ],
-  "collections": [
+    },
     {
-      "id": "kung-pao",
-      "displayName": "Kung Pao",
-      "type": "item",
+      "id": "protein",
+      "displayName": "Protein",
+      "type": "discrete",
       "values": [
-        {"itemId": "kung-pao-chicken"},
-        {"itemId": "kung-pao-shrimp"}
+        {"value": "Pork", "associatedItemId": "shredded-pork"},
+        {"value": "Beef", "associatedItemId": "beef-chunk"},
+        {"value": "Chicken", "associatedItemId": "shredded-chicken"},
+        {"value": "Shrimp", "associatedItemId": "stir-fried-shrimp"}
       ]
     },
     {
-      "id": "milk-tea",
-      "displayName": "Milk Tea",
-      "type": "item",
+      "id": "salad-protein",
+      "displayName": "Protein for the salad",
+      "type": "discrete",
       "values": [
-        {"itemId": "hot-milk-tea"},
-        {"itemId": "iced-milk-tea"}
+        {"value": "None"},
+        {"value": "Chicken", "associatedItemId": "shredded-chicken"},
+        {"value": "Shrimp", "associatedItemId": "stir-fried-shrimp"},
+        {"value": "Salmon", "associatedItemId": "baked-salmon"}
+      ]
+    },
+    {
+      "id": "pad-thai-protein",
+      "displayName": "Protein for the Pad Thai",
+      "type": "discrete",
+      "values": [
+        {"value": "Chicken", "associatedItemId": "shredded-chicken"},
+        {"value": "Shrimp", "associatedItemId": "stir-fried-shrimp"},
+        {"value": "Combo", "associatedItemId": "stir-fried-combo"}
+      ]
+    },
+    {
+      "id": "carb-protein",
+      "displayName": "Protein for the carb",
+      "type": "discrete",
+      "values": [
+        {"value": "Vegetable", "associatedItemId": "stir-fried-vegetable"},
+        {"value": "Pork", "associatedItemId": "shredded-pork"},
+        {"value": "Beef", "associatedItemId": "beef-chunk"},
+        {"value": "Chicken", "associatedItemId": "shredded-chicken"},
+        {"value": "Shrimp", "associatedItemId": "stir-fried-shrimp"},
+        {"value": "Combo", "associatedItemId": "stir-fried-combo"}
+      ]
+    },
+    {
+      "id": "drink-size",
+      "displayName": "Size",
+      "type": "discrete-ordered",
+      "values": [
+        {"value": "extra small"},
+        {"value": "small"},
+        {"value": "medium"},
+        {"value": "large"}
+      ]
+    },
+    {
+      "id": "egg-roll-choice",
+      "displayName": "Egg Roll",
+      "type": "discrete",
+      "values": [
+        {"value": "Pork", "associatedItemId": "pork-egg-roll"},
+        {"value": "Chicken", "associatedItemId": "chicken-egg-roll"}
       ]
     }
   ]

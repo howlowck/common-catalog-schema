@@ -128,8 +128,13 @@ interface Collection {
  * Represents a Text Value in a Concept
  */
 interface DiscreteItem {
-    value: string,
-    synonyms?: string[]
+  value: string,
+  synonyms?: string[],
+  /**
+   * An unique id for the item associated with the item
+   * @pattern ^[A-Za-z0-9_\-]+$
+   */
+  associatedItemId?: string 
 }
 
 /**

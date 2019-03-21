@@ -429,6 +429,12 @@
         "DiscreteItem": {
             "description": "Represents a Text Value in a Concept",
             "properties": {
+                "associatedItemId": {
+                    "description": "An unique id for the item associated with the item",
+                    "pattern": "^[A-Za-z0-9_\\-]+$",
+                    "title": "associatedItemId",
+                    "type": "string"
+                },
                 "synonyms": {
                     "items": {
                         "type": "string"
@@ -443,7 +449,8 @@
             },
             "propertyOrder": [
                 "value",
-                "synonyms"
+                "synonyms",
+                "associatedItemId"
             ],
             "title": "DiscreteItem",
             "type": "object"
