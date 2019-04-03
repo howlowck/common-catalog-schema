@@ -4,7 +4,7 @@
   "description": "A Common Catalog Schema that allows for full relationship and classification",
   "main": "dist/schema.js",
   "scripts": {
-    "start": "npm run build:schema && docson -d ./json-schema/",
+    "start": "npm run build:schema && docson -p 4000 -d ./json-schema/",
     "build:schema": "tsc && typescript-json-schema \"src/schema.ts\" CatalogSchema -o json-schema/schema.json --titles=true --propOrder=true",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

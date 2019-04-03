@@ -89,7 +89,7 @@
       "id": "vegetarian",
       "name": "Vegetarian",
       "parent": "entree",
-      "synonyms": []
+      "synonyms": ["vegetable"]
     },
     {
       "id": "noodles",
@@ -181,17 +181,19 @@
       "id": "lettuce-wrap",
       "displayName": "Lettuce Wrap",
       "commonNames": [],
-      "classification": {
+      "classifications": [{
         "classificationId": "street-food"
-      }
+      }],
+      "disambiguationAttributes": []
     },
     {
       "id": "edamame",
       "displayName": "Edamame",
       "commonNames": ["steamed peas"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "street-food"
-      }
+      }]
     },
     {
       "id": "tempura",
@@ -207,41 +209,45 @@
           }
         }
       ],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "street-food"
-      }
+      }]
     },
     {
       "id": "fried-green-beans",
       "displayName": "Fried Green Beans",
       "commonNames": ["Crispy Green Beans"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "street-food"
-      }
+      }]
     },
     {
       "id": "bbq-ribs",
       "displayName": "BBQ ribs",
       "commonNames": ["Barbecue Spare Ribs", "Ribs"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "street-food"
-      }
+      }]
     },
     {
       "id": "spicy-shrimp",
       "displayName": "Spicy Shrimp",
       "commonNames": ["shrimp bites"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "street-food"
-      }
+      }]
     },
     {
       "id": "pork-dumplings",
       "displayName": "Pork Dumplings",
       "commonNames": [],
-      "classification": {
+      "classifications": [{
         "classificationId": "dumpling"
-      },
+      }],
       "disambiguationAttributes": [
         {
           "conceptId": "protein",
@@ -253,9 +259,9 @@
       "id": "shrimp-dumplings",
       "displayName": "Shrimp Dumplings",
       "commonNames": [],
-      "classification": {
+      "classifications": [{
         "classificationId": "dumpling"
-      },
+      }],
       "disambiguationAttributes": [
         {
           "conceptId": "protein",
@@ -267,25 +273,27 @@
       "id": "crab-rangoon",
       "displayName": "Crab Rangoon",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "dim-sum"
-      }
+      }]
     },
     {
       "id": "spring-rolls",
       "displayName": "Spring Rolls",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "dim-sum"
-      }
+      }]
     },
     {
       "id": "pork-egg-rolls",
       "displayName": "Pork Egg Rolls",
       "commonNames": [],
-      "classification": {
+      "classifications": [{
         "classificationId": "egg-roll"
-      },
+      }],
       "disambiguationAttributes": [
         {
           "conceptId": "protein",
@@ -297,9 +305,9 @@
       "id": "chicken-egg-rolls",
       "displayName": "Chicken Egg Rolls",
       "commonNames": [],
-      "classification": {
+      "classifications": [{
         "classificationId": "egg-roll"
-      },
+      }],
       "disambiguationAttributes": [
         {
           "conceptId": "protein",
@@ -311,81 +319,91 @@
       "id": "charred-brussels-sprout",
       "displayName": "Charred Brussels Sprout",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "side-dish"
-      }
+      }]
     },
     {
       "id": "sichuan-asparagus",
       "displayName": "Sichuan Asparagus",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "side-dish"
-      }
+      }]
     },
     {
       "id": "fried-rice",
       "displayName": "Fried Rice",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "side-dish"
-      }
+      }]
     },
     {
       "id": "spinach-with-garlic",
       "displayName": "Spinach with Garlic",
       "commonNames": ["steamed spinach"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "side-dish"
-      }
+      }]
     },
     {
       "id": "chili-garlic-green-beans",
       "displayName": "Chili Garlic Green Beans",
       "commonNames": ["garlic green beans"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "side-dish"
-      }
+      }]
     },
     {
       "id": "long-life-noodles",
       "displayName": "Long Life Noodles",
       "commonNames": ["noodles as a side"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "side-dish"
-      }
+      }]
     },
     {
       "id": "california-roll",
       "displayName": "California Roll",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "sushi"
-      }
+      }]
     },
     {
       "id": "spicy-tuna-roll",
       "displayName": "Spicy Tuna Roll",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "sushi"
-      }
+      }]
     },
     {
       "id": "shrimp-tempura-roll",
       "displayName": "Shrimp Tempura Roll",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "sushi"
-      }
+      }]
     },
     {
       "id": "caesar-salad",
       "displayName": "Caesar Salad",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "salad"
-      },
+      }],
       "choices": [
         {
           "conceptId": "salad-protein",
@@ -407,9 +425,10 @@
       "id": "mandarin-salad",
       "displayName": "Mandarin Salad",
       "commonNames": ["Mandarin Crunch Salad"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "salad"
-      },
+      }],
       "choices": [
         {
           "conceptId": "salad-protein",
@@ -431,9 +450,10 @@
       "id": "noodle-salad",
       "displayName": "Noodle Salad",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "salad"
-      },
+      }],
       "choices": [
         {
           "conceptId": "salad-protein",
@@ -455,97 +475,108 @@
       "id": "egg-drop-soup",
       "displayName": "Egg Drop Soup",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "soup"
-      }
+      }]
     },
     {
       "id": "hot-sour-soup",
       "displayName": "Hot Sour Soup",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "soup"
-      }
+      }]
     },
     {
       "id": "wonton-soup",
       "displayName": "Wonton Soup",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "soup"
-      }
+      }]
     },
     {
       "id": "chicken-noodle-soup",
       "displayName": "Chicken Noodle Soup",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "soup"
-      }
+      }]
     },
     {
       "id": "spicy-chicken",
       "displayName": "Spicy Chicken",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "chicken"
-      }
+      }]
     },
     {
       "id": "black-pepper-chicken",
       "displayName": "Black Pepper Chicken",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "chicken"
-      }
+      }]
     },
     {
       "id": "chicken-with-broccoli",
       "displayName": "Chicken With Broccoli",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "chicken"
-      }
+      }]
     },
     {
       "id": "sesame-chicken",
       "displayName": "Sesame Chicken",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "chicken"
-      }
+      }]
     },
     {
       "id": "sweet-sour-chicken",
       "displayName": "Sweet and Sour Chicken",
       "commonNames": ["sweet sour chicken"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "chicken"
-      }
+      }]
     },
     {
       "id": "thai-curry-with-chicken",
       "displayName": "Thai Curry with Chicken",
       "commonNames": ["curry with chicken"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "chicken"
-      }
+      }]
     },
     {
       "id": "orange-chicken",
       "displayName": "Orange Chicken",
+      "disambiguationAttributes": [],
       "commonNames": [],
-      "classification": {
+      "classifications": [{
         "classificationId": "chicken"
-      }
+      }]
     },
     {
       "id": "kung-pao-chicken",
       "displayName": "Kung Pao Chicken",
       "commonNames": [],
-      "classification": {
+      "classifications": [{
         "classificationId": "chicken"
-      },
+      }],
       "disambiguationAttributes": [
         {"conceptId": "protein","value": "Chicken"}
       ]
@@ -554,105 +585,118 @@
       "id": "mongolian-beef",
       "displayName": "Mongolian Beef",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "beef"
-      }
+      }]
     },
     {
       "id": "pepper-steak",
       "displayName": "Pepper Steak",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "beef"
-      }
+      }]
     },
     {
       "id": "beef-with-broccoli",
       "displayName": "Beef with Broccoli",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "beef"
-      }
+      }]
     },
     {
       "id": "surf-and-turf",
       "displayName": "Surf and Turf",
       "commonNames": ["shrimp and steak"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "seafood"
-      }
+      }]
     },
     {
       "id": "honey-shrimp",
       "displayName": "Honey Shrimp",
       "commonNames": ["crispy shrimp"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "seafood"
-      }
+      }]
     },
     {
       "id": "chilean-sea-bass",
       "displayName": "Chilean Sea Bass",
       "commonNames": ["sea bass"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "seafood"
-      }
+      }]
     },
     {
       "id": "kung-pao-shrimp",
       "displayName": "Kung Pao Shrimp",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "seafood"
-      }
+      }]
     },
     {
       "id": "shrimp-with-lobster-sauce",
       "displayName": "Shrimp with Lobster Sauce",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "seafood"
-      }
+      }]
     },
     {
       "id": "orange-shrimp",
       "displayName": "Orange Shrimp",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "seafood"
-      }
+      }]
     },
     {
       "id": "thai-curry",
       "displayName": "Thai Curry",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "vegetarian"
-      }
+      }]
     },
     {
       "id": "ma-po-tofu",
       "displayName": "Ma Po Tofu",
       "commonNames": ["spicy tofu"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "vegetarian"
-      }
+      }]
     },
     {
       "id": "stir-fried-eggplant",
       "displayName": "Stir Fried Eggplant",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "vegetarian"
-      }
+      }]
     },
     {
       "id": "pad-thai",
       "displayName": "Pad Thai",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "noodles"
-      },
+      }],
       "choices": [
         {
           "conceptId": "pad-thai-protein",
@@ -674,17 +718,19 @@
       "id": "street-noodles",
       "displayName": "Street Noodles",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "noodles"
-      }
+      }]
     },
     {
       "id": "lo-mein",
       "displayName": "Lo Mein",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "noodles"
-      },
+      }],
       "choices": [
         {
           "conceptId": "carb-protein",
@@ -700,201 +746,410 @@
       "id": "strawberry-spring-rolls",
       "displayName": "Strawberry Spring Rolls",
       "commonNames": ["sweet spring rolls", "dessert spring rolls"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "dessert"
-      }
+      }]
     },
     {
       "id": "chocolate-lava-cake",
       "displayName": "Chocolate Lava Cake",
       "commonNames": ["chocolate cake"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "dessert"
-      }
+      }]
     },
     {
       "id": "new-york-cheesecake",
       "displayName": "New York Cheesecake",
       "commonNames": ["New york style cheesecake", "cheesecake"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "dessert"
-      }
+      }]
     },
     {
       "id": "spicy-chicken-bowl",
       "displayName": "Spicy Chicken Bowl",
+      "disambiguationAttributes": [],
       "commonNames": [],
-      "classification": {
+      "classifications": [{
         "classificationId": "lunch"
-      }
+      }]
     },
     {
       "id": "korean-bibimbap",
       "displayName": "Korean Bibimbap",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "lunch"
-      }
+      }]
     },
     {
       "id": "mongolian-beef-bowl",
       "displayName": "Mongolian Beef Bowl",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "lunch"
-      }
+      }]
     },
     {
       "id": "udon-noodle-bowl",
       "displayName": "Udon Noodle Bowl",
       "commonNames": ["udon bowl"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "lunch"
-      }
+      }]
     },
     {
       "id": "gochujang-sauce",
       "displayName": "Gochujang Sauce",
       "commonNames": ["spicy sauce"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "sauce"
-      }
+      }]
     },
     {
       "id": "asian-barbecue-sauce",
       "displayName": "Asian Barbecue Sauce",
       "commonNames": ["barbecue sauce", "bbq sauce", "bbq", "barbecue"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "sauce"
-      }
+      }]
     },
     {
       "id": "spicy-dipping-sauce",
       "displayName": "Spicy Dipping Sauce",
       "commonNames": ["Spicy Sauce", "Chili Dipping Sauce"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "sauce"
-      }
+      }]
     },
     {
       "id": "sriracha-honey-dipping-sauce",
       "displayName": "Sriracha Honey Dipping Sauce",
+      "disambiguationAttributes": [],
       "commonNames": ["Sriracha"],
-      "classification": {
+      "classifications": [{
         "classificationId": "sauce"
-      }
+      }]
     },
     {
       "id": "chili-sauce",
       "displayName": "Chili Sauce",
+      "disambiguationAttributes": [],
       "commonNames": ["chili"],
-      "classification": {
+      "classifications": [{
         "classificationId": "sauce"
-      }
+      }]
     },
     {
       "id": "spicy-plum-sauce",
       "displayName": "spicy plum sauce",
+      "disambiguationAttributes": [],
       "commonNames": ["plum sauce"],
-      "classification": {
+      "classifications": [{
         "classificationId": "sauce"
-      }
+      }]
     },
     {
       "id": "sweet-and-sour-sauce",
       "displayName": "Sweet and Sour Sauce",
       "commonNames": ["Sweet sour sauce"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "sauce"
-      }
+      }]
     },
     {
       "id": "red-chili-sauce",
       "displayName": "Red Chili Sauce",
       "commonNames": ["Fiery Red Chili Sauce", "Fiery Chili Sauce"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "sauce"
-      }
+      }]
     },
     {
       "id": "umami-sauce",
       "displayName": "Umami Sauce",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "sauce"
-      }
+      }]
     },
     {
       "id": "mandarin-vinaigrette",
       "displayName": "Mandarin Vinaigrette",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "sauce"
-      }
+      }]
     },
     {
       "id": "garlic-sauce",
       "displayName": "Garlic Sauce",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "sauce"
-      }
+      }]
     },
     {
       "id": "sesame-sauce",
       "displayName": "Sesame Sauce",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "sauce"
-      }
+      }]
     },
     {
       "id": "sichuan-chili-sauce",
       "displayName": "Sichuan Chili Sauce",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "sauce"
-      }
+      }]
     },
     {
       "id": "lobster-sauce",
       "displayName": "Lobster Sauce",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "sauce"
-      }
+      }]
     },
     {
       "id": "ginger-soy-sauce",
       "displayName": "Ginger Soy Sauce",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "sauce"
-      }
+      }]
     },
     {
       "id": "curry-sauce",
       "displayName": "Curry Sauce",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "sauce"
-      }
+      }]
     },
     {
       "id": "sugar",
       "displayName": "Sugar",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "ingredient"
-      }
+      }]
+    },
+    {
+      "id": "hot-milk-tea",
+      "displayName": "Hot Milk Tea",
+      "commonNames": [],
+      "disambiguationAttributes": [{
+        "conceptId": "tea-temperature",
+        "value": "Hot"
+      }, {
+        "conceptId": "drink-size",
+        "value": "Medium"
+      }],
+      "classifications": [{
+        "classificationId": "hot-tea"
+      }],
+      "components": [{
+        "itemId": "sugar",
+        "type": "concept",
+        "attribute": {
+          "conceptId": "sweet-level",
+          "defaultValue": "Full"
+        }
+      }],
+      "addOns": [
+        {
+          "itemId": "boba",
+          "target": "supplement",
+          "choiceType": "option",
+          "option": {
+            "conceptId": "boba-amount",
+            "defaultValue": "Regular"
+          }
+        }
+      ]
+    },
+    {
+      "id": "small-hot-milk-tea",
+      "displayName": "Small Hot milk tea",
+      "disambiguationAttributes": [
+        {
+          "conceptId": "tea-temperature",
+          "value": "Hot"
+        },
+        {
+          "conceptId": "drink-size",
+          "value": "Small"
+        }
+      ],
+      "classifications": [{
+        "classificationId": "hot-tea"
+      }],
+      "components": [{
+        "itemId": "sugar",
+        "type": "concept",
+        "attribute": {
+          "conceptId": "sweet-level",
+          "defaultValue": "Full"
+        }
+      }],
+      "addOns": [
+        {
+          "itemId": "boba",
+          "target": "supplement",
+          "choiceType": "option",
+          "option": {
+            "conceptId": "boba-amount",
+            "defaultValue": "Regular"
+          }
+        }
+      ]
+    },
+    {
+      "id": "large-hot-milk-tea",
+      "displayName": "Large Hot milk tea",
+      "disambiguationAttributes": [
+        {
+          "conceptId": "tea-temperature",
+          "value": "Hot"
+        },
+        {
+          "conceptId": "drink-size",
+          "value": "Large"
+        }
+      ],
+      "classifications": [{
+        "classificationId": "hot-tea"
+      }],
+      "components": [{
+        "itemId": "sugar",
+        "type": "concept",
+        "attribute": {
+          "conceptId": "sweet-level",
+          "defaultValue": "Full"
+        }
+      }],
+      "addOns": [
+        {
+          "itemId": "boba",
+          "target": "supplement",
+          "choiceType": "option",
+          "option": {
+            "conceptId": "boba-amount",
+            "defaultValue": "Regular"
+          }
+        }
+      ]
     },
     {
       "id": "iced-milk-tea",
       "displayName": "Iced Milk Tea",
       "commonNames": [],
-      "classification": {
+      "disambiguationAttributes": [{
+        "conceptId": "tea-temperature",
+        "value": "Cold"
+      }, {
+        "conceptId": "drink-size",
+        "value": "Medium"
+      }],
+      "classifications": [{
         "classificationId": "cold-tea"
-      },
+      }],
+      "components": [{
+        "itemId": "sugar",
+        "type": "concept",
+        "attribute": {
+          "conceptId": "sweet-level",
+          "defaultValue": "Full"
+        }
+      }],
+      "addOns": [
+        {
+          "itemId": "boba",
+          "target": "supplement",
+          "choiceType": "option",
+          "option": {
+            "conceptId": "boba-amount",
+            "defaultValue": "Regular"
+          }
+        }
+      ]
+    },
+    {
+      "id": "small-iced-milk-tea",
+      "displayName": "Small Iced milk tea",
+      "disambiguationAttributes": [
+        {
+          "conceptId": "tea-temperature",
+          "value": "Cold"
+        },
+        {
+          "conceptId": "drink-size",
+          "value": "Small"
+        }
+      ],
+      "classifications": [{
+        "classificationId": "cold-tea"
+      }],
+      "components": [{
+        "itemId": "sugar",
+        "type": "concept",
+        "attribute": {
+          "conceptId": "sweet-level",
+          "defaultValue": "Full"
+        }
+      }],
+      "addOns": [
+        {
+          "itemId": "boba",
+          "target": "supplement",
+          "choiceType": "option",
+          "option": {
+            "conceptId": "boba-amount",
+            "defaultValue": "Regular"
+          }
+        }
+      ]
+    },
+    {
+      "id": "large-iced-milk-tea",
+      "displayName": "Large Iced milk tea",
+      "disambiguationAttributes": [
+        {
+          "conceptId": "tea-temperature",
+          "value": "Cold"
+        },
+        {
+          "conceptId": "drink-size",
+          "value": "Large"
+        }
+      ],
+      "classifications": [{
+        "classificationId": "cold-tea"
+      }],
       "components": [{
         "itemId": "sugar",
         "type": "concept",
@@ -919,53 +1174,11 @@
       "id": "boba",
       "displayName": "Boba",
       "commonNames": ["tapioca"],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "ingredient"
-      },
-      "components": []
-    },
-    {
-      "id": "milk-tea",
-      "displayName": "Iced Milk Tea",
-      "commonNames": [],
-      "disambiguationAttributes": [
-        {
-          "conceptId": "tea-temperature",
-          "value": "Cold"
-        }
-      ],
-      "classification": {
-        "classificationId": "cold-tea"
-      },
-      "components": [{
-        "itemId": "sugar",
-        "type": "concept",
-        "attribute": {
-          "conceptId": "sweet-level",
-          "defaultValue": "Full"
-        }
       }],
-      "addOns": [
-        {
-          "itemId": "boba",
-          "target": "supplement",
-          "choiceType": "option",
-          "option": {
-            "conceptId": "boba-amount",
-            "defaultValue": "Regular"
-          }
-        }
-      ]
-    },
-    {
-      "id": "hot-milk-tea",
-      "displayName": "Hot milk tea",
-      "disambiguationAttributes": [
-        {
-          "conceptId": "tea-temperature",
-          "value": "Hot"
-        }
-      ]
+      "components": []
     },
     {
       "id": "spicy-chicken-combo",
@@ -990,9 +1203,10 @@
           }
         }
       ],
-      "classification": {
+      "disambiguationAttributes": [],
+      "classifications": [{
         "classificationId": "combo"
-      },
+      }],
       "choices": [
         {
           "conceptId": "egg-roll-choice",
@@ -1019,9 +1233,9 @@
           "value": "Small"
         }
       ],
-      "classification": {
+      "classifications": [{
         "classificationId": "soda"
-      }
+      }]
     },
     {
       "id": "medium-soda",
@@ -1033,9 +1247,9 @@
           "value": "Medium"
         }
       ],
-      "classification": {
+      "classifications": [{
         "classificationId": "soda"
-      }
+      }]
     },
     {
       "id": "large-soda",
@@ -1047,9 +1261,9 @@
           "value": "Large"
         }
       ],
-      "classification": {
+      "classifications": [{
         "classificationId": "soda"
-      }
+      }]
     }
   ],
   "concepts": [

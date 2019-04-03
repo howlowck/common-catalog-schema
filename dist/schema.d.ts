@@ -16,10 +16,6 @@ export interface CatalogSchema {
      */
     items: ItemDefinition[];
     /**
-     * Abstract Groupings of various base items
-     */
-    collections: Collection[];
-    /**
      * All abstract concepts that ties different concrete items or abstract values together
      * this is also used to create complex mappings between different concrete items
      */
@@ -88,22 +84,6 @@ export declare enum CollectionType {
     item = "item"
 }
 /**
- * Represents an item Grouping
- */
-export interface Collection {
-    /**
-     * An unique id for the concept
-     * @pattern ^[A-Za-z0-9_\-]+$
-     */
-    id: string;
-    /**
-     * Proper name
-     */
-    displayName: string;
-    type: CollectionType;
-    values: ItemValue[];
-}
-/**
  * Represents a Text Value in a Concept
  */
 export interface DiscreteItem {
@@ -137,7 +117,7 @@ export interface ItemDefinition {
     displayName: string;
     commonNames: string[];
     disambiguationAttributes: Attribute[];
-    classification: ClassificationItem;
+    classifications: ClassificationItem[];
     metadata: Metadata[];
     components: Component[];
     addOns: AddOn[];

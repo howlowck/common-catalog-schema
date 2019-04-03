@@ -1,0 +1,335 @@
+{
+  "title": "Coffee Shop",
+  "classifications": [{
+    "id": "drink",
+    "name": "Drink"
+  }, {
+    "id": "food",
+    "name": "Food"
+  }, {
+    "id": "hot-coffee",
+    "name": "hot coffee",
+    "parent": "drink"
+  }, {
+    "id": "cold-coffee",
+    "name": "Cold Coffee",
+    "synonyms": ["Iced Coffee"],
+    "parent": "drink"
+  }, {
+    "id": "americano",
+    "name": "Americano",
+    "synonyms": [],
+    "parent": "hot-coffee"
+  }, {
+    "id": "brewed-coffee",
+    "name": "Brewed Coffee",
+    "synonyms": [],
+    "parent": "hot-coffee"
+  }, {
+    "id": "cappuccino",
+    "name": "Cappuccino",
+    "synonyms": [],
+    "parent": "hot-coffee"
+  }, {
+    "id": "espresso-shot",
+    "name": "Espresso Shot",
+    "synonyms": [],
+    "parent": "hot-coffee"
+  }, {
+    "id": "latte",
+    "name": "Latte",
+    "synonyms": [],
+    "parent": "hot-coffee"
+  }, {
+    "id": "iced-americano",
+    "name": "Iced Americano",
+    "synonyms": [],
+    "parent": "cold-coffee"
+  }, {
+    "id": "iced-latte",
+    "name": "Iced Latte",
+    "synonyms": [],
+    "parent": "cold-coffee"
+  }],
+  "items": [{
+    "id": "hot-brewed-coffee",
+    "displayName": "Medium Hot Brewed Coffee",
+    "commonNames": [],
+    "disambiguationAttributes": [{
+      "conceptId": "drink-temperature",
+      "value": "hot"
+    }, {
+      "conceptId": "drink-size",
+      "value": "medium"
+    }],
+    "classifications": [{
+      "classificationId": "hot-coffee"
+    }]
+  }, {
+    "id": "small-hot-brewed-coffee",
+    "displayName": "Small Hot Coffee",
+    "commonNames": ["small coffee", "small hot coffee"],
+    "disambiguationAttributes": [{
+      "conceptId": "drink-temperature",
+      "value": "hot"
+    }, {
+      "conceptId": "drink-size",
+      "value": "small"
+    }],
+    "classifications": [{
+      "classificationId": "hot-coffee"
+    }]
+  }, {
+    "id": "cold-brew",
+    "displayName": "Cold Brew",
+    "commonNames": ["cold coffee", "iced coffee"],
+    "disambiguationAttributes": [{
+      "conceptId": "drink-temperature",
+      "value": "cold"
+    }, {
+      "conceptId": "drink-size",
+      "value": "medium"
+    }],
+    "classifications": [{
+      "classificationId": "cold-coffee"
+    }]
+  }, {
+    "id": "small-cold-brew",
+    "displayName": "Small Cold Brew",
+    "commonNames": ["small iced coffee"],
+    "disambiguationAttributes": [{
+      "conceptId": "drink-temperature",
+      "value": "cold"
+    }, {
+      "conceptId": "drink-size",
+      "value": "small"
+    }],
+    "classifications": [{
+      "classificationId": "cold-coffee"
+    }] 
+  }, {
+    "id": "large-cold-brew",
+    "displayName": "Large Cold Brew",
+    "commonNames": ["large iced coffee"],
+    "disambiguationAttributes": [{
+      "conceptId": "drink-temperature",
+      "value": "cold"
+    }, {
+      "conceptId": "drink-size",
+      "value": "large"
+    }],
+    "classifications": [{
+      "classificationId": "cold-coffee"
+    }] 
+  }, {
+    "id": "medium-latte",
+    "displayName": "Regular Latte",
+    "commonNames": ["Medium Latte"],
+    "disambiguationAttributes": [{
+      "conceptId": "drink-temperature",
+      "value": "hot"
+    }, {
+      "conceptId": "drink-size",
+      "value": "medium"
+    }],
+    "classifications": [{
+      "classificationId": "latte"
+    }]
+  }, {
+    "id": "small-latte",
+    "displayName": "Small Latte",
+    "commonNames": [],
+    "disambiguationAttributes": [{
+      "conceptId": "drink-temperature",
+      "value": "hot"
+    }, {
+      "conceptId": "drink-size",
+      "value": "small"
+    }],
+    "classifications": [{
+      "classificationId": "latte"
+    }]
+  }, {
+    "id": "medium-vanilla-latte",
+    "displayName": "Regular Vanilla Latte",
+    "commonNames": ["Medium Vanilla Latte"],
+    "disambiguationAttributes": [{
+      "conceptId": "drink-temperature",
+      "value": "hot"
+    }, {
+      "conceptId": "drink-size",
+      "value": "medium"
+    }, {
+      "conceptId": "latte-flavor",
+      "value": "vanilla"
+    }],
+    "classifications": [{
+      "classificationId": "latte"
+    }]
+  }, {
+    "id": "small-vanilla-latte",
+    "displayName": "Small Vanilla Latte",
+    "commonNames": [],
+    "disambiguationAttributes": [{
+      "conceptId": "drink-temperature",
+      "value": "hot"
+    }, {
+      "conceptId": "drink-size",
+      "value": "small"
+    }, {
+      "conceptId": "latte-flavor",
+      "value": "vanilla"
+    }],
+    "classifications": [{
+      "classificationId": "latte"
+    }]
+  }, {
+    "id": "medium-cinnamon-latte",
+    "displayName": "Regular cinnamon Latte",
+    "commonNames": ["Medium cinnamon Latte"],
+    "disambiguationAttributes": [{
+      "conceptId": "drink-temperature",
+      "value": "hot"
+    }, {
+      "conceptId": "drink-size",
+      "value": "medium"
+    }, {
+      "conceptId": "latte-flavor",
+      "value": "cinnamon"
+    }],
+    "classifications": [{
+      "classificationId": "latte"
+    }]
+  }, {
+    "id": "small-cinnamon-latte",
+    "displayName": "Small cinnamon Latte",
+    "commonNames": [],
+    "disambiguationAttributes": [{
+      "conceptId": "drink-temperature",
+      "value": "hot"
+    }, {
+      "conceptId": "drink-size",
+      "value": "small"
+    }, {
+      "conceptId": "latte-flavor",
+      "value": "cinnamon"
+    }],
+    "classifications": [{
+      "classificationId": "latte"
+    }]
+  }, {
+    "id": "small-iced-cinnamon-latte",
+    "displayName": "Small Iced cinnamon Latte",
+    "commonNames": [],
+    "disambiguationAttributes": [{
+      "conceptId": "drink-temperature",
+      "value": "cold"
+    }, {
+      "conceptId": "drink-size",
+      "value": "small"
+    }, {
+      "conceptId": "latte-flavor",
+      "value": "cinnamon"
+    }],
+    "classifications": [{
+      "classificationId": "latte"
+    }]
+  }, {
+    "id": "medium-iced-vanilla-latte",
+    "displayName": "Regular Iced Vanilla Latte",
+    "commonNames": [],
+    "disambiguationAttributes": [{
+      "conceptId": "drink-temperature",
+      "value": "cold"
+    }, {
+      "conceptId": "drink-size",
+      "value": "medium"
+    }, {
+      "conceptId": "latte-flavor",
+      "value": "vanilla"
+    }],
+    "classifications": [{
+      "classificationId": "latte"
+    }]
+  }, {
+    "id": "medium-iced-cinnamon-latte",
+    "displayName": "Regular Iced cinnamon Latte",
+    "commonNames": [],
+    "disambiguationAttributes": [{
+      "conceptId": "drink-temperature",
+      "value": "cold"
+    }, {
+      "conceptId": "drink-size",
+      "value": "medium"
+    }, {
+      "conceptId": "latte-flavor",
+      "value": "cinnamon"
+    }],
+    "classifications": [{
+      "classificationId": "latte"
+    }]
+  }, {
+    "id": "small-iced-latte",
+    "displayName": "Small Iced Latte",
+    "commonNames": [],
+    "disambiguationAttributes": [{
+      "conceptId": "drink-size",
+      "value": "small"
+    }, {
+      "conceptId": "drink-temperature",
+      "value": "cold" 
+    }],
+    "classifications": [{
+      "classificationId": "latte"
+    }]
+  }, {
+    "id": "iced-latte",
+    "displayName": "Iced Latte",
+    "commonNames": [],
+    "disambiguationAttributes": [{
+      "conceptId": "drink-size",
+      "value": "medium"
+    },{
+      "conceptId": "drink-temperature",
+      "value": "cold" 
+    }],
+    "classifications": [{
+      "classificationId": "latte"
+    }]
+  }],
+  "concepts": [{
+    "id": "latte-flavor",
+    "displayName": "Latte Flavor",
+    "type": "discrete",
+    "values": [
+      {"value": "vanilla"},
+      {"value": "cinnamon"},
+      {"value": "mint chocolate", "synonyms": ["mint"]}
+    ]
+  },{
+    "id": "drink-temperature",
+    "displayName": "Drink Temperature",
+    "type": "discrete",
+    "values": [
+      {"value": "hot"},
+      {"value": "cold", "synonyms": ["iced"]}
+    ]
+  }, {
+    "id": "drink-size",
+    "displayName": "Size",
+    "type": "discrete-ordered",
+    "values": [
+      {"value": "small"},
+      {"value": "medium"},
+      {"value": "large"}
+    ]
+  }, {
+    "id": "milk-level",
+    "displayName": "Milk Amount",
+    "type": "discrete-ordered",
+    "values": [
+      {"value": "none", "synonyms": ["no milk"]},
+      {"value": "regular", "synonyms": ["with milk"]}
+    ]
+  }]
+}

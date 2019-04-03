@@ -220,45 +220,6 @@
             "title": "ClassificationItem",
             "type": "object"
         },
-        "Collection": {
-            "description": "Represents an item Grouping",
-            "properties": {
-                "displayName": {
-                    "description": "Proper name",
-                    "title": "displayName",
-                    "type": "string"
-                },
-                "id": {
-                    "description": "An unique id for the concept",
-                    "pattern": "^[A-Za-z0-9_\\-]+$",
-                    "title": "id",
-                    "type": "string"
-                },
-                "type": {
-                    "description": "Represents a Collection Type",
-                    "enum": [
-                        "item"
-                    ],
-                    "title": "type",
-                    "type": "string"
-                },
-                "values": {
-                    "items": {
-                        "$ref": "#/definitions/ItemValue"
-                    },
-                    "title": "values",
-                    "type": "array"
-                }
-            },
-            "propertyOrder": [
-                "id",
-                "displayName",
-                "type",
-                "values"
-            ],
-            "title": "Collection",
-            "type": "object"
-        },
         "Component": {
             "description": "Represents a Component\nA Component is a concrete item that makes up another concrete item",
             "properties": {
@@ -472,9 +433,12 @@
                     "title": "choices",
                     "type": "array"
                 },
-                "classification": {
-                    "$ref": "#/definitions/ClassificationItem",
-                    "title": "classification"
+                "classifications": {
+                    "items": {
+                        "$ref": "#/definitions/ClassificationItem"
+                    },
+                    "title": "classifications",
+                    "type": "array"
                 },
                 "commonNames": {
                     "items": {
@@ -527,7 +491,7 @@
                 "displayName",
                 "commonNames",
                 "disambiguationAttributes",
-                "classification",
+                "classifications",
                 "metadata",
                 "components",
                 "addOns",
@@ -535,22 +499,6 @@
                 "choices"
             ],
             "title": "ItemDefinition",
-            "type": "object"
-        },
-        "ItemValue": {
-            "description": "Represents an Item Value in a Concept",
-            "properties": {
-                "itemId": {
-                    "description": "Id of an Item",
-                    "pattern": "^[A-Za-z0-9_\\-]+$",
-                    "title": "itemId",
-                    "type": "string"
-                }
-            },
-            "propertyOrder": [
-                "itemId"
-            ],
-            "title": "ItemValue",
             "type": "object"
         },
         "Metadata": {
@@ -704,14 +652,6 @@
             "title": "classifications",
             "type": "array"
         },
-        "collections": {
-            "description": "Abstract Groupings of various base items",
-            "items": {
-                "$ref": "#/definitions/Collection"
-            },
-            "title": "collections",
-            "type": "array"
-        },
         "concepts": {
             "description": "All abstract concepts that ties different concrete items or abstract values together\nthis is also used to create complex mappings between different concrete items",
             "items": {
@@ -738,7 +678,6 @@
         "title",
         "classifications",
         "items",
-        "collections",
         "concepts"
     ],
     "type": "object"
