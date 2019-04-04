@@ -64,10 +64,6 @@
                     "title": "conceptId",
                     "type": "string"
                 },
-                "name": {
-                    "title": "name",
-                    "type": "string"
-                },
                 "value": {
                     "title": "value",
                     "type": [
@@ -79,8 +75,7 @@
             },
             "propertyOrder": [
                 "conceptId",
-                "value",
-                "name"
+                "value"
             ],
             "title": "Attribute",
             "type": "object"

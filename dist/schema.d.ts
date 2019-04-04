@@ -261,7 +261,3 @@ export interface ClassificationItem {
      */
     classificationId: string;
 }
-export interface Attribute {
-    name: string;
-    value: string | boolean | number;
-}
