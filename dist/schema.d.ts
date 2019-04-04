@@ -167,6 +167,7 @@ export interface Attribute {
      */
     conceptId: string;
     value: string | boolean | number;
+    isDefault?: boolean;
 }
 export declare enum AddOnChoiceType {
     option = "option",

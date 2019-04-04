@@ -64,6 +64,10 @@
                     "title": "conceptId",
                     "type": "string"
                 },
+                "isDefault": {
+                    "title": "isDefault",
+                    "type": "boolean"
+                },
                 "value": {
                     "title": "value",
                     "type": [
@@ -75,7 +79,8 @@
             },
             "propertyOrder": [
                 "conceptId",
-                "value"
+                "value",
+                "isDefault"
             ],
             "title": "Attribute",
             "type": "object"

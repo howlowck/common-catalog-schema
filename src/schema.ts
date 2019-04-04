@@ -187,7 +187,8 @@ export interface Attribute {
    * @pattern ^[A-Za-z0-9_\-]+$
    */
   conceptId: string,
-  value: string | boolean | number
+  value: string | boolean | number,
+  isDefault?: boolean
 }
 
 export enum AddOnChoiceType {
