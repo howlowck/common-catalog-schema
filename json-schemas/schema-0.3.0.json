@@ -1,0 +1,702 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": false,
+    "definitions": {
+        "AddOn": {
+            "additionalProperties": false,
+            "description": "Represents an AddOn in an Item Definition",
+            "properties": {
+                "attributes": {
+                    "items": {
+                        "$ref": "#/definitions/Attribute"
+                    },
+                    "title": "attributes",
+                    "type": "array"
+                },
+                "choiceType": {
+                    "$ref": "#/definitions/AddOnChoiceType",
+                    "title": "choiceType"
+                },
+                "itemId": {
+                    "description": "Id of the Item",
+                    "pattern": "^[A-Za-z0-9_\\-]+$",
+                    "title": "itemId",
+                    "type": "string"
+                },
+                "option": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ConceptOption"
+                        },
+                        {
+                            "$ref": "#/definitions/RangeOption"
+                        }
+                    ],
+                    "title": "option"
+                },
+                "target": {
+                    "$ref": "#/definitions/Target",
+                    "title": "target"
+                }
+            },
+            "propertyOrder": [
+                "itemId",
+                "target",
+                "choiceType",
+                "attributes",
+                "option"
+            ],
+            "title": "AddOn",
+            "type": "object"
+        },
+        "AddOnChoiceType": {
+            "enum": [
+                "option",
+                "range"
+            ],
+            "title": "AddOnChoiceType",
+            "type": "string"
+        },
+        "Attribute": {
+            "additionalProperties": false,
+            "description": "Represents an Attribute",
+            "properties": {
+                "conceptId": {
+                    "description": "Id of the Concept",
+                    "pattern": "^[A-Za-z0-9_\\-]+$",
+                    "title": "conceptId",
+                    "type": "string"
+                },
+                "isDefault": {
+                    "title": "isDefault",
+                    "type": "boolean"
+                },
+                "value": {
+                    "title": "value",
+                    "type": [
+                        "string",
+                        "number",
+                        "boolean"
+                    ]
+                }
+            },
+            "propertyOrder": [
+                "conceptId",
+                "value",
+                "isDefault"
+            ],
+            "title": "Attribute",
+            "type": "object"
+        },
+        "Choice": {
+            "additionalProperties": false,
+            "description": "Represents a Choice in a Item Definition",
+            "properties": {
+                "choiceValues": {
+                    "items": {
+                        "$ref": "#/definitions/ChoiceValue"
+                    },
+                    "title": "choiceValues",
+                    "type": "array"
+                },
+                "conceptId": {
+                    "description": "Id of the Concept",
+                    "pattern": "^[A-Za-z0-9_\\-]+$",
+                    "title": "conceptId",
+                    "type": "string"
+                },
+                "defaultQuantity": {
+                    "title": "defaultQuantity",
+                    "type": "number"
+                },
+                "maxQuantity": {
+                    "title": "maxQuantity",
+                    "type": "number"
+                },
+                "minQuantity": {
+                    "title": "minQuantity",
+                    "type": "number"
+                },
+                "required": {
+                    "title": "required",
+                    "type": "boolean"
+                },
+                "selectType": {
+                    "$ref": "#/definitions/SelectType",
+                    "title": "selectType"
+                },
+                "target": {
+                    "$ref": "#/definitions/Target",
+                    "title": "target"
+                }
+            },
+            "propertyOrder": [
+                "conceptId",
+                "required",
+                "target",
+                "selectType",
+                "minQuantity",
+                "defaultQuantity",
+                "maxQuantity",
+                "choiceValues"
+            ],
+            "title": "Choice",
+            "type": "object"
+        },
+        "ChoiceValue": {
+            "additionalProperties": false,
+            "properties": {
+                "data": {
+                    "additionalProperties": {
+                        "type": [
+                            "string",
+                            "number",
+                            "boolean"
+                        ]
+                    },
+                    "description": "This is a data object that is tied to the value, for the item",
+                    "propertyOrder": [],
+                    "title": "data",
+                    "type": "object"
+                },
+                "value": {
+                    "description": "`value` is the associated value in the concept (pointed by the `conceptId`)",
+                    "title": "value",
+                    "type": "string"
+                }
+            },
+            "propertyOrder": [
+                "value",
+                "data"
+            ],
+            "title": "ChoiceValue",
+            "type": "object"
+        },
+        "Classification": {
+            "additionalProperties": false,
+            "description": "Represents a specific classification",
+            "properties": {
+                "id": {
+                    "description": "An unique id for the classification",
+                    "pattern": "^[A-Za-z0-9_\\-]+$",
+                    "title": "id",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Proper classification name",
+                    "title": "name",
+                    "type": "string"
+                },
+                "parent": {
+                    "description": "The Id of its parent classification\nIf parent is not present, that means the classification is a top-level classification",
+                    "title": "parent",
+                    "type": "string"
+                },
+                "synonyms": {
+                    "description": "A list of common names for this classification",
+                    "items": {
+                        "type": "string"
+                    },
+                    "title": "synonyms",
+                    "type": "array"
+                }
+            },
+            "propertyOrder": [
+                "id",
+                "name",
+                "parent",
+                "synonyms"
+            ],
+            "title": "Classification",
+            "type": "object"
+        },
+        "ClassificationItem": {
+            "additionalProperties": false,
+            "properties": {
+                "classificationId": {
+                    "description": "Id of the Classification",
+                    "pattern": "^[A-Za-z0-9_\\-]+$",
+                    "title": "classificationId",
+                    "type": "string"
+                }
+            },
+            "propertyOrder": [
+                "classificationId"
+            ],
+            "title": "ClassificationItem",
+            "type": "object"
+        },
+        "Component": {
+            "additionalProperties": false,
+            "description": "Represents a Component\nA Component is a concrete item that makes up another concrete item",
+            "properties": {
+                "attribute": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/QuantityAttribute"
+                        },
+                        {
+                            "$ref": "#/definitions/ConceptAttribute"
+                        }
+                    ],
+                    "title": "attribute"
+                },
+                "itemId": {
+                    "description": "Id of the Item",
+                    "pattern": "^[A-Za-z0-9_\\-]+$",
+                    "title": "itemId",
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/definitions/ComponentType",
+                    "title": "type"
+                }
+            },
+            "propertyOrder": [
+                "itemId",
+                "type",
+                "attribute"
+            ],
+            "title": "Component",
+            "type": "object"
+        },
+        "ComponentType": {
+            "enum": [
+                "concept",
+                "quantity"
+            ],
+            "title": "ComponentType",
+            "type": "string"
+        },
+        "Concept": {
+            "additionalProperties": false,
+            "description": "Represents a Concept",
+            "properties": {
+                "displayName": {
+                    "description": "Proper name",
+                    "title": "displayName",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "An unique id for the concept",
+                    "pattern": "^[A-Za-z0-9_\\-]+$",
+                    "title": "id",
+                    "type": "string"
+                },
+                "quantity": {
+                    "$ref": "#/definitions/QuantityValue",
+                    "title": "quantity"
+                },
+                "type": {
+                    "$ref": "#/definitions/ConceptType",
+                    "description": "The type of concept values",
+                    "title": "type"
+                },
+                "values": {
+                    "description": "The list of values",
+                    "items": {
+                        "$ref": "#/definitions/DiscreteItem"
+                    },
+                    "title": "values",
+                    "type": "array"
+                }
+            },
+            "propertyOrder": [
+                "id",
+                "displayName",
+                "type",
+                "values",
+                "quantity"
+            ],
+            "title": "Concept",
+            "type": "object"
+        },
+        "ConceptAttribute": {
+            "additionalProperties": false,
+            "properties": {
+                "conceptId": {
+                    "title": "conceptId",
+                    "type": "string"
+                },
+                "defaultValue": {
+                    "title": "defaultValue",
+                    "type": "string"
+                }
+            },
+            "propertyOrder": [
+                "conceptId",
+                "defaultValue"
+            ],
+            "title": "ConceptAttribute",
+            "type": "object"
+        },
+        "ConceptOption": {
+            "additionalProperties": false,
+            "properties": {
+                "conceptId": {
+                    "title": "conceptId",
+                    "type": "string"
+                },
+                "defaultValue": {
+                    "title": "defaultValue",
+                    "type": "string"
+                },
+                "optionValues": {
+                    "items": {
+                        "$ref": "#/definitions/OptionValue"
+                    },
+                    "title": "optionValues",
+                    "type": "array"
+                }
+            },
+            "propertyOrder": [
+                "conceptId",
+                "defaultValue",
+                "optionValues"
+            ],
+            "title": "ConceptOption",
+            "type": "object"
+        },
+        "ConceptType": {
+            "enum": [
+                "discrete",
+                "discrete-ordered",
+                "quantity"
+            ],
+            "title": "ConceptType",
+            "type": "string"
+        },
+        "Customization": {
+            "additionalProperties": false,
+            "description": "Represents a Customization Option which points to a Concept\nCustomization changes the aspect (associated concept) of a Component or an AddOn",
+            "properties": {
+                "conceptId": {
+                    "description": "Id of the Concept",
+                    "pattern": "^[A-Za-z0-9_\\-]+$",
+                    "title": "conceptId",
+                    "type": "string"
+                },
+                "defaultQuantity": {
+                    "title": "defaultQuantity",
+                    "type": "number"
+                },
+                "maxQuantity": {
+                    "title": "maxQuantity",
+                    "type": "number"
+                },
+                "minQuantity": {
+                    "title": "minQuantity",
+                    "type": "number"
+                }
+            },
+            "propertyOrder": [
+                "conceptId",
+                "minQuantity",
+                "defaultQuantity",
+                "maxQuantity"
+            ],
+            "title": "Customization",
+            "type": "object"
+        },
+        "DiscreteItem": {
+            "additionalProperties": false,
+            "description": "Represents a Text Value in a Concept",
+            "properties": {
+                "associatedItemId": {
+                    "description": "An unique id for the item associated with the item",
+                    "pattern": "^[A-Za-z0-9_\\-]+$",
+                    "title": "associatedItemId",
+                    "type": "string"
+                },
+                "synonyms": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "title": "synonyms",
+                    "type": "array"
+                },
+                "value": {
+                    "title": "value",
+                    "type": "string"
+                }
+            },
+            "propertyOrder": [
+                "value",
+                "synonyms",
+                "associatedItemId"
+            ],
+            "title": "DiscreteItem",
+            "type": "object"
+        },
+        "ItemDefinition": {
+            "additionalProperties": false,
+            "description": "Represents a concrete item and all its attributes and relationships",
+            "properties": {
+                "addOns": {
+                    "items": {
+                        "$ref": "#/definitions/AddOn"
+                    },
+                    "title": "addOns",
+                    "type": "array"
+                },
+                "choices": {
+                    "items": {
+                        "$ref": "#/definitions/Choice"
+                    },
+                    "title": "choices",
+                    "type": "array"
+                },
+                "classifications": {
+                    "items": {
+                        "$ref": "#/definitions/ClassificationItem"
+                    },
+                    "title": "classifications",
+                    "type": "array"
+                },
+                "commonNames": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "title": "commonNames",
+                    "type": "array"
+                },
+                "components": {
+                    "items": {
+                        "$ref": "#/definitions/Component"
+                    },
+                    "title": "components",
+                    "type": "array"
+                },
+                "customizations": {
+                    "items": {
+                        "$ref": "#/definitions/Customization"
+                    },
+                    "title": "customizations",
+                    "type": "array"
+                },
+                "disambiguationAttributes": {
+                    "items": {
+                        "$ref": "#/definitions/Attribute"
+                    },
+                    "title": "disambiguationAttributes",
+                    "type": "array"
+                },
+                "displayName": {
+                    "title": "displayName",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Id of the item",
+                    "pattern": "^[A-Za-z0-9_\\-]+$",
+                    "title": "id",
+                    "type": "string"
+                },
+                "metadata": {
+                    "items": {
+                        "$ref": "#/definitions/Metadata"
+                    },
+                    "title": "metadata",
+                    "type": "array"
+                }
+            },
+            "propertyOrder": [
+                "id",
+                "displayName",
+                "commonNames",
+                "disambiguationAttributes",
+                "classifications",
+                "metadata",
+                "components",
+                "addOns",
+                "customizations",
+                "choices"
+            ],
+            "title": "ItemDefinition",
+            "type": "object"
+        },
+        "Metadata": {
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "title": "name",
+                    "type": "string"
+                },
+                "value": {
+                    "title": "value",
+                    "type": [
+                        "string",
+                        "number",
+                        "boolean"
+                    ]
+                }
+            },
+            "propertyOrder": [
+                "name",
+                "value"
+            ],
+            "title": "Metadata",
+            "type": "object"
+        },
+        "OptionValue": {
+            "additionalProperties": false,
+            "properties": {
+                "data": {
+                    "additionalProperties": {
+                        "type": [
+                            "string",
+                            "number",
+                            "boolean"
+                        ]
+                    },
+                    "propertyOrder": [],
+                    "title": "data",
+                    "type": "object"
+                },
+                "value": {
+                    "title": "value",
+                    "type": "string"
+                }
+            },
+            "propertyOrder": [
+                "value",
+                "data"
+            ],
+            "title": "OptionValue",
+            "type": "object"
+        },
+        "QuantityAttribute": {
+            "additionalProperties": false,
+            "properties": {
+                "defaultQuantity": {
+                    "title": "defaultQuantity",
+                    "type": "number"
+                },
+                "maxQuantity": {
+                    "title": "maxQuantity",
+                    "type": "number"
+                },
+                "minQuantity": {
+                    "title": "minQuantity",
+                    "type": "number"
+                }
+            },
+            "propertyOrder": [
+                "defaultQuantity",
+                "minQuantity",
+                "maxQuantity"
+            ],
+            "title": "QuantityAttribute",
+            "type": "object"
+        },
+        "QuantityValue": {
+            "additionalProperties": false,
+            "properties": {
+                "incrementBy": {
+                    "title": "incrementBy",
+                    "type": "number"
+                },
+                "maxQuantity": {
+                    "title": "maxQuantity",
+                    "type": "number"
+                },
+                "minQuantity": {
+                    "title": "minQuantity",
+                    "type": "number"
+                }
+            },
+            "propertyOrder": [
+                "minQuantity",
+                "maxQuantity",
+                "incrementBy"
+            ],
+            "title": "QuantityValue",
+            "type": "object"
+        },
+        "RangeOption": {
+            "additionalProperties": false,
+            "description": "Represents a Range Option",
+            "properties": {
+                "defaultQuantity": {
+                    "title": "defaultQuantity",
+                    "type": "number"
+                },
+                "incrementBy": {
+                    "title": "incrementBy",
+                    "type": "number"
+                },
+                "maxQuantity": {
+                    "title": "maxQuantity",
+                    "type": "number"
+                },
+                "minQuantity": {
+                    "title": "minQuantity",
+                    "type": "number"
+                }
+            },
+            "propertyOrder": [
+                "incrementBy",
+                "minQuantity",
+                "defaultQuantity",
+                "maxQuantity"
+            ],
+            "title": "RangeOption",
+            "type": "object"
+        },
+        "SelectType": {
+            "enum": [
+                "multiple",
+                "single"
+            ],
+            "title": "SelectType",
+            "type": "string"
+        },
+        "Target": {
+            "enum": [
+                "replace",
+                "supplement"
+            ],
+            "title": "Target",
+            "type": "string"
+        }
+    },
+    "description": "Represents a Common Schema for any Catalog Data\nThis is used for a full relationship declaration in the menu service",
+    "properties": {
+        "classifications": {
+            "description": "Classification Data and how different classifications relates to one another",
+            "items": {
+                "$ref": "#/definitions/Classification"
+            },
+            "title": "classifications",
+            "type": "array"
+        },
+        "concepts": {
+            "description": "All abstract concepts that ties different concrete items or abstract values together\nthis is also used to create complex mappings between different concrete items",
+            "items": {
+                "$ref": "#/definitions/Concept"
+            },
+            "title": "concepts",
+            "type": "array"
+        },
+        "items": {
+            "description": "All concrete items in a catalog (usually each item tied to a specific sku)",
+            "items": {
+                "$ref": "#/definitions/ItemDefinition"
+            },
+            "title": "items",
+            "type": "array"
+        },
+        "title": {
+            "description": "Title of the data",
+            "title": "title",
+            "type": "string"
+        }
+    },
+    "propertyOrder": [
+        "title",
+        "classifications",
+        "items",
+        "concepts"
+    ],
+    "type": "object"
+}
+

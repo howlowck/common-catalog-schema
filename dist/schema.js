@@ -9,6 +9,7 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.SelectType = exports.ComponentType = exports.Target = exports.AddOnChoiceType = exports.CollectionType = exports.ConceptType = void 0;
     var ConceptType;
     (function (ConceptType) {
         ConceptType["discrete"] = "discrete";

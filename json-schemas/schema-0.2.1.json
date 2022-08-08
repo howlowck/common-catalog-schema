@@ -150,8 +150,7 @@
                         ]
                     },
                     "description": "This is a data object that is tied to the value, for the item",
-                    "propertyOrder": [
-                    ],
+                    "propertyOrder": [],
                     "title": "data",
                     "type": "object"
                 },
@@ -533,8 +532,7 @@
                             "boolean"
                         ]
                     },
-                    "propertyOrder": [
-                    ],
+                    "propertyOrder": [],
                     "title": "data",
                     "type": "object"
                 },

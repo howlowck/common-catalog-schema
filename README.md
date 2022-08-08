@@ -28,4 +28,9 @@ Concepts are used within the ItemDefinitions to augment the base item's `choices
 ## To See the docs:
 1. clone the repo
 2. `npm install`
-3. `npm start`
+3. `pip install json-schema-for-humans` (Yes, it's a python package 😬, because I can't find a good nodejs tool for generating docs from JSON Schemas)
+4. `npm start`
+
+> To generate the docs separatly use `generate-schema-doc ./json-schema/ docs/spec`
+
+5. Follow the URL in the output to see the docs.
